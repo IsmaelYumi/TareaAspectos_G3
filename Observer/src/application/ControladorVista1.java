@@ -15,38 +15,40 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 public class ControladorVista1  implements Initializable {
 	@FXML
-	private static Button bt_rojo;
+	public Button bt_rojo;
 	@FXML
-	public static Button bt_azul;
+	public  Button bt_azul;
 	@FXML
-	public static Button bt_verde;
+	public  Button bt_verde;
 	private String color_pantalla;
 	
 	
 	@FXML
 	
-	public void Cambiar_Rojo( ActionEvent e) {
+	protected  BackgroundFill Cambiar_Rojo( ActionEvent e) {
 	Pane contenedor= (Pane) bt_rojo.getScene().getRoot();	
 	BackgroundFill bgfill=new BackgroundFill(Color.RED,new CornerRadii(0),new Insets(0));
 	Background bgr=new Background(bgfill);
 	contenedor.setBackground(bgr);
-	this.color_pantalla="rojo";
+	return bgfill;
 	}
 	@FXML
-	public  void Cambiar_Azul( ActionEvent e) {
+	protected BackgroundFill  Cambiar_Azul( ActionEvent e) {
 	Pane contenedor= (Pane) bt_rojo.getScene().getRoot();	
 	BackgroundFill bgfill=new BackgroundFill(Color.BLUE,new CornerRadii(0),new Insets(0));
 	Background bga=new Background(bgfill);
-	this.color_pantalla="Azul";
+	contenedor.setBackground(bga);
+	return bgfill;
 	
 	}
 	@FXML
-	public  void Cambiar_Verde( ActionEvent e) {
+	protected BackgroundFill  Cambiar_Verde( ActionEvent e) {
 	Pane contenedor= (Pane) bt_rojo.getScene().getRoot();	
 	BackgroundFill bgfill=new BackgroundFill(Color.GREEN,new CornerRadii(0),new Insets(0));
 	Background bgv=new Background(bgfill);
 	contenedor.setBackground(bgv);
-	this.color_pantalla="Verde";
+	return bgfill;
+
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
